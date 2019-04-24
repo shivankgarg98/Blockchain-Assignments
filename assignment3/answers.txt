@@ -1,0 +1,18 @@
+Ans 1. tx.origin is a security vulnerability, and makes the wallet owner vulnerable to phishing attacks. If the wallet owner or contract interacts with the malicious contract, the attacker can impersonate the owner and thus steal funds or tokens, and change the owner of the wallet.
+ref. - https://blog.ethereum.org/2016/06/24/security-alert-smart-contract-wallets-created-in-frontier-are-vulnerable-to-phishing-attacks/
+
+Ans 2. Contract ABI stands for Contract Application Binary Interface, is the standard way to interact with contracts in the Ethereum ecosystem, both from outside the blockchain and for contract-to-contract interaction. It is needed for encoding/decoding data in/out of the machine code.
+ref. - https://solidity.readthedocs.io/en/develop/abi-spec.html
+
+Ans 3. Functions declared with 'view' promise not to modify the state of the system. Since they don't change the internal state of the contract, no ether transactions are involved. On the other side, Non-view functions are assumed to changing the internal state of contract, by default. Thus, cost some ether. Both view and non-view functions cost gas when used on the network, but not on the local node.
+ref. - https://solidity.readthedocs.io/en/latest/contracts.html?highlight=emit#view-functions 
+
+Ans 4. assert() and require() are different in following sense -
+(a.) Gas Efficiency- assert(false) compiles to invalid opcode, using up all the gases, and reverting all the changes. While require(false), compile to revert opcode, and refund the remaining gas.
+(b.) Byte-Code Analysis- assert() can be used to evaluate the contract for bugs. Since proper functioning code never reaches a failed assert condition.
+ref. - https://ethereum.stackexchange.com/a/24185
+
+Ans 5. Checksum address is different from non-checksum address, in the sense, that it prevents mistyped or invalid addresses from being used. even before a transaction with an invalid address is constructed. Raw binary keccack-256 hash of the address bytes is compared with Ethereum address, and when there are letters in the same corresponding place as a "1" bit the letter is capitalized (and lowercase for 0). Example (a.) Checksum Address - 0x15447F663480593E804dd72fefD06f687C933630 v/s (b.) Non-checksum Address -  0x15447f663480593e804dd72fefd06f687c933630 . Note the different cases.
+ref. - https://ethereum.stackexchange.com/a/331
+
+
