@@ -1,0 +1,14 @@
+Shivank Garg
+160658
+CS731 Assignments
+
+"I did not violate any honor code to do this assignment. All the code is written by me only"
+
+I have implemented validate() function in transaction.cpp, I verified my function by running them on given 3 .dat files. They were able produce the output of length 1similiar to give in corresponding .txt files
+
+I, then, impemented the myvalidate_block_helper() by making changes to given blockchain.cpp file. This works fine only for Ist test case.
+
+This required me to edit the update_balances() in transaction.cpp by removing existing assert statements and deleting the source_address from the balance_map.
+
+The final step make the blockchain pass all the 6 given test cases, within fair time limits.
+
